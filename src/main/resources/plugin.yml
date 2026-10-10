@@ -1,0 +1,19 @@
+name: LocatorBar
+version: 1.0.0
+main: com.wuolp.LocatorBar
+api-version: '1.21'
+author: Wuolp
+description: Turn on Minecraft 1.21.11 Locator Bar randomly with commands and config support!
+
+commands:
+  locatorbar:
+    description: Manage and configure LocatorBar
+    aliases: [lb]
+    permission: locatorbar.admin
+    permission-message: "§cYou do not have permission to use this command."
+    usage: "§cUsage: /locatorbar <start|stop|status|set|toggle|reload|help>"
+
+permissions:
+  locatorbar.admin:
+    description: Full administration permissions for LocatorBar
+    default: op

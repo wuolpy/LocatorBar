@@ -1,0 +1,97 @@
+# ========================================================= #
+#                   LOCATOR BAR CONFIGURATION               #
+#                      Minecraft 1.21.11                    #
+# ========================================================= #
+
+# Whether the automatic random scheduler is enabled
+enabled: true
+
+# How long (in seconds) the locator bar stays ON once activated
+duration: 60
+
+# Interval range (in seconds) between automatic activations.
+# A random delay between min and max will be chosen for each cycle.
+interval:
+  min: 300    # 5 minutes
+  max: 900    # 15 minutes
+
+# World settings
+worlds:
+  # When true, toggles the locator bar gamerule across all loaded worlds
+  all-worlds: true
+  # When all-worlds is false, only these specific worlds will be affected
+  whitelist:
+    - "world"
+    - "world_nether"
+    - "world_the_end"
+
+# Message and Notification Settings
+messages:
+  # Prefix used in plugin messages
+  prefix: "&8[&c&lLOCATOR&6&lBAR&8]&r "
+
+  # Broadcast sent when the locator bar turns ON
+  # Note: Multi-line messages are fully supported!
+  activated:
+    - "&c&m=================================================="
+    - "&e&lLOCATOR BAR IS ON! LET THE FIGHTERS FIGHT..."
+    - "&7Track your opponents at the top of your screen!"
+    - "&c&m=================================================="
+
+  # Broadcast sent when the locator bar turns OFF
+  deactivated:
+    - "&7&m=================================================="
+    - "&c&lLOCATOR BAR IS OFF! &7The fighters may rest."
+    - "&7&m=================================================="
+
+  # Screen Title broadcast sent on activation
+  title:
+    enabled: true
+    title: "&c&lLOCATOR BAR IS ON!"
+    subtitle: "&eLET THE FIGHTERS FIGHT..."
+    fade-in: 10
+    stay: 70
+    fade-out: 20
+
+  # Action bar countdown sent to players while locator bar is active
+  action-bar:
+    enabled: true
+    message: "&c&lLOCATOR BAR ACTIVE &8| &e{time_left} &7remaining"
+
+  # Sound effects
+  sound:
+    enabled: true
+    # Sound played when locator bar turns ON
+    sound-on: "ENTITY_ENDER_DRAGON_GROWL"
+    # Sound played when locator bar turns OFF
+    sound-off: "BLOCK_BEACON_DEACTIVATE"
+    volume: 1.0
+    pitch: 1.0
+
+# ========================================================= #
+#                   AUTO UPDATER SETTINGS                   #
+#         Update the plugin WITHOUT restarting the server!  #
+# ========================================================= #
+updater:
+  # Whether the auto-updater system is enabled
+  enabled: true
+
+  # How often (in seconds) to check for updates automatically.
+  # Set to 3600 (1 hour) by default. Set to 0 to disable periodic checks.
+  check-interval: 3600
+
+  # When a new version is detected:
+  # - If auto-download is true, the new jar will be downloaded automatically.
+  # - If auto-reload is true, the plugin will immediately hot-swap into memory
+  #   WITHOUT RESTARTING THE SERVER!
+  auto-download: false
+  auto-reload: false
+
+  # Mode: 'github' or 'direct'
+  mode: "github"
+
+  # GitHub repository in format "owner/repo" (e.g. wuolp/LocatorBar)
+  github-repo: "wuolp/LocatorBar"
+
+  # Custom update JSON or direct JAR download URL (used if mode is 'direct')
+  direct-url: ""
